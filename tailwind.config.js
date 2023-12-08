@@ -1,9 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./**/*.{html,js}"],
+  mode: "jit",
   theme: {
     extend: {
       keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        marquee2: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
         typing: {
           "0%": {
             width: "0%",
@@ -24,6 +33,8 @@ module.exports = {
       },
       animation: {
         typing: "typing 4s steps(20) infinite alternate, blink .2s infinite",
+        marquee: "marquee 25s linear infinite",
+        marquee2: "marquee2 25s linear infinite",
       },
     },
   },
